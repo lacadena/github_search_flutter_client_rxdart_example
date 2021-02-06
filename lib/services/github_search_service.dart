@@ -37,7 +37,7 @@ class GitHubSearchService {
   final _searchTerms = BehaviorSubject<String>();
   void searchUser(String query) => _searchTerms.add(query);
 
-  // Input stream (search terms)
+  // Input stream (search repo)
   final _searchRepos = BehaviorSubject<String>();
   void searchRepo(String query) => _searchRepos.add(query);
 
