@@ -5,8 +5,9 @@ import '../models/github_user.dart';
 import '../services/github_search_service.dart';
 
 class GitHubSearchDelegate extends SearchDelegate<GitHubUser> {
-  GitHubSearchDelegate(this.searchService);
+  GitHubSearchDelegate(this.searchService) : this.searchFieldLabel = 'Search user';
   final GitHubSearchService searchService;
+  final String searchFieldLabel;
 
   @override
   Widget buildLeading(BuildContext context) {
@@ -42,7 +43,7 @@ class GitHubSearchDelegate extends SearchDelegate<GitHubUser> {
 
   Widget buildMatchingSuggestions(BuildContext context) {
     final Map<GitHubAPIError, String> errorMessages = {
-      GitHubAPIError.parseError: 'Error reading data from the API',
+      GitHubAPIError.parseError: 'Ups, no results for $query',
       GitHubAPIError.rateLimitExceeded: 'Rate limit exceeded',
       GitHubAPIError.unknownError: 'Unknown error',
     };
@@ -103,6 +104,7 @@ class GitHubUserSearchResultTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     final ThemeData theme = Theme.of(context);
     return InkWell(
       onTap: () => onSelected(user),
