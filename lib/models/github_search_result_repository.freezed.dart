@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'github_search_result.dart';
+part of 'github_search_result_repository.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,18 +10,18 @@ part of 'github_search_result.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$GitHubSearchResultTearOff {
-  const _$GitHubSearchResultTearOff();
+class _$GitHubSearchResultRepositoryTearOff {
+  const _$GitHubSearchResultRepositoryTearOff();
 
 // ignore: unused_element
-  Data call(List<GitHubUser> user) {
+  Data call(List<GitHubRepository> repository) {
     return Data(
-      user,
+      repository,
     );
   }
 
 // ignore: unused_element
-  Error error(GitHubAPIError error) {
+  Error error(GitHubAPIErrorRepository error) {
     return Error(
       error,
     );
@@ -30,19 +30,19 @@ class _$GitHubSearchResultTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $GitHubSearchResult = _$GitHubSearchResultTearOff();
+const $GitHubSearchResultRepository = _$GitHubSearchResultRepositoryTearOff();
 
 /// @nodoc
-mixin _$GitHubSearchResult {
+mixin _$GitHubSearchResultRepository {
   @optionalTypeArgs
   TResult when<TResult extends Object>(
-    TResult $default(List<GitHubUser> user), {
-    @required TResult error(GitHubAPIError error),
+    TResult $default(List<GitHubRepository> repository), {
+    @required TResult error(GitHubAPIErrorRepository error),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>(
-    TResult $default(List<GitHubUser> user), {
-    TResult error(GitHubAPIError error),
+    TResult $default(List<GitHubRepository> repository), {
+    TResult error(GitHubAPIErrorRepository error),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -59,31 +59,33 @@ mixin _$GitHubSearchResult {
 }
 
 /// @nodoc
-abstract class $GitHubSearchResultCopyWith<$Res> {
-  factory $GitHubSearchResultCopyWith(
-          GitHubSearchResult value, $Res Function(GitHubSearchResult) then) =
-      _$GitHubSearchResultCopyWithImpl<$Res>;
+abstract class $GitHubSearchResultRepositoryCopyWith<$Res> {
+  factory $GitHubSearchResultRepositoryCopyWith(
+          GitHubSearchResultRepository value,
+          $Res Function(GitHubSearchResultRepository) then) =
+      _$GitHubSearchResultRepositoryCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GitHubSearchResultCopyWithImpl<$Res>
-    implements $GitHubSearchResultCopyWith<$Res> {
-  _$GitHubSearchResultCopyWithImpl(this._value, this._then);
+class _$GitHubSearchResultRepositoryCopyWithImpl<$Res>
+    implements $GitHubSearchResultRepositoryCopyWith<$Res> {
+  _$GitHubSearchResultRepositoryCopyWithImpl(this._value, this._then);
 
-  final GitHubSearchResult _value;
+  final GitHubSearchResultRepository _value;
   // ignore: unused_field
-  final $Res Function(GitHubSearchResult) _then;
+  final $Res Function(GitHubSearchResultRepository) _then;
 }
 
 /// @nodoc
 abstract class $DataCopyWith<$Res> {
   factory $DataCopyWith(Data value, $Res Function(Data) then) =
       _$DataCopyWithImpl<$Res>;
-  $Res call({List<GitHubUser> user});
+  $Res call({List<GitHubRepository> repository});
 }
 
 /// @nodoc
-class _$DataCopyWithImpl<$Res> extends _$GitHubSearchResultCopyWithImpl<$Res>
+class _$DataCopyWithImpl<$Res>
+    extends _$GitHubSearchResultRepositoryCopyWithImpl<$Res>
     implements $DataCopyWith<$Res> {
   _$DataCopyWithImpl(Data _value, $Res Function(Data) _then)
       : super(_value, (v) => _then(v as Data));
@@ -93,37 +95,40 @@ class _$DataCopyWithImpl<$Res> extends _$GitHubSearchResultCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object user = freezed,
+    Object repository = freezed,
   }) {
     return _then(Data(
-      user == freezed ? _value.user : user as List<GitHubUser>,
+      repository == freezed
+          ? _value.repository
+          : repository as List<GitHubRepository>,
     ));
   }
 }
 
 /// @nodoc
 class _$Data implements Data {
-  const _$Data(this.user) : assert(user != null);
+  const _$Data(this.repository) : assert(repository != null);
 
   @override
-  final List<GitHubUser> user;
+  final List<GitHubRepository> repository;
 
   @override
   String toString() {
-    return 'GitHubSearchResult(user: $user)';
+    return 'GitHubSearchResultRepository(repository: $repository)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is Data &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.repository, repository) ||
+                const DeepCollectionEquality()
+                    .equals(other.repository, repository)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(repository);
 
   @JsonKey(ignore: true)
   @override
@@ -133,24 +138,24 @@ class _$Data implements Data {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>(
-    TResult $default(List<GitHubUser> user), {
-    @required TResult error(GitHubAPIError error),
+    TResult $default(List<GitHubRepository> repository), {
+    @required TResult error(GitHubAPIErrorRepository error),
   }) {
     assert($default != null);
     assert(error != null);
-    return $default(user);
+    return $default(repository);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>(
-    TResult $default(List<GitHubUser> user), {
-    TResult error(GitHubAPIError error),
+    TResult $default(List<GitHubRepository> repository), {
+    TResult error(GitHubAPIErrorRepository error),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if ($default != null) {
-      return $default(user);
+      return $default(repository);
     }
     return orElse();
   }
@@ -181,10 +186,10 @@ class _$Data implements Data {
   }
 }
 
-abstract class Data implements GitHubSearchResult {
-  const factory Data(List<GitHubUser> user) = _$Data;
+abstract class Data implements GitHubSearchResultRepository {
+  const factory Data(List<GitHubRepository> repository) = _$Data;
 
-  List<GitHubUser> get user;
+  List<GitHubRepository> get repository;
   @JsonKey(ignore: true)
   $DataCopyWith<Data> get copyWith;
 }
@@ -193,11 +198,12 @@ abstract class Data implements GitHubSearchResult {
 abstract class $ErrorCopyWith<$Res> {
   factory $ErrorCopyWith(Error value, $Res Function(Error) then) =
       _$ErrorCopyWithImpl<$Res>;
-  $Res call({GitHubAPIError error});
+  $Res call({GitHubAPIErrorRepository error});
 }
 
 /// @nodoc
-class _$ErrorCopyWithImpl<$Res> extends _$GitHubSearchResultCopyWithImpl<$Res>
+class _$ErrorCopyWithImpl<$Res>
+    extends _$GitHubSearchResultRepositoryCopyWithImpl<$Res>
     implements $ErrorCopyWith<$Res> {
   _$ErrorCopyWithImpl(Error _value, $Res Function(Error) _then)
       : super(_value, (v) => _then(v as Error));
@@ -210,7 +216,7 @@ class _$ErrorCopyWithImpl<$Res> extends _$GitHubSearchResultCopyWithImpl<$Res>
     Object error = freezed,
   }) {
     return _then(Error(
-      error == freezed ? _value.error : error as GitHubAPIError,
+      error == freezed ? _value.error : error as GitHubAPIErrorRepository,
     ));
   }
 }
@@ -220,11 +226,11 @@ class _$Error implements Error {
   const _$Error(this.error) : assert(error != null);
 
   @override
-  final GitHubAPIError error;
+  final GitHubAPIErrorRepository error;
 
   @override
   String toString() {
-    return 'GitHubSearchResult.error(error: $error)';
+    return 'GitHubSearchResultRepository.error(error: $error)';
   }
 
   @override
@@ -247,8 +253,8 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>(
-    TResult $default(List<GitHubUser> user), {
-    @required TResult error(GitHubAPIError error),
+    TResult $default(List<GitHubRepository> repository), {
+    @required TResult error(GitHubAPIErrorRepository error),
   }) {
     assert($default != null);
     assert(error != null);
@@ -258,8 +264,8 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>(
-    TResult $default(List<GitHubUser> user), {
-    TResult error(GitHubAPIError error),
+    TResult $default(List<GitHubRepository> repository), {
+    TResult error(GitHubAPIErrorRepository error),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -295,10 +301,10 @@ class _$Error implements Error {
   }
 }
 
-abstract class Error implements GitHubSearchResult {
-  const factory Error(GitHubAPIError error) = _$Error;
+abstract class Error implements GitHubSearchResultRepository {
+  const factory Error(GitHubAPIErrorRepository error) = _$Error;
 
-  GitHubAPIError get error;
+  GitHubAPIErrorRepository get error;
   @JsonKey(ignore: true)
   $ErrorCopyWith<Error> get copyWith;
 }
