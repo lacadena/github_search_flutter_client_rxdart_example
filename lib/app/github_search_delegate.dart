@@ -54,6 +54,7 @@ class GitHubSearchDelegate extends SearchDelegate<GitHubUser> {
           final GitHubSearchResult result = snapshot.data;
           return result.when(
             (users) => GridView.builder(
+              physics: BouncingScrollPhysics(),
               itemCount: users.length,
               gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200,
