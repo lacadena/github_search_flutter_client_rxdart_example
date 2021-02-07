@@ -1,39 +1,76 @@
 import 'package:flutter/material.dart';
-
-import '../app/github_search_delegate.dart';
-import '../models/github_user.dart';
-import '../services/github_search_api_wrapper.dart';
-import '../services/github_search_service.dart';
-
+import 'package:github_search_flutter_client_rxdart_example/models/menu_model.dart';
+import 'package:github_search_flutter_client_rxdart_example/views/code_page.dart';
+import 'package:github_search_flutter_client_rxdart_example/views/repository_page.dart';
+import 'package:github_search_flutter_client_rxdart_example/views/topic_page.dart';
+import 'package:github_search_flutter_client_rxdart_example/views/user_page.dart';
+import 'package:github_search_flutter_client_rxdart_example/widgets/menu.dart';
+import 'package:provider/provider.dart';
 class HomePage extends StatelessWidget {
-  void _showSearch(BuildContext context) async {
-    final searchService =
-        GitHubSearchService(apiWrapper: GitHubSearchAPIWrapper());
-    final user = await showSearch<GitHubUser>(
-      context: context,
-      delegate: GitHubSearchDelegate(searchService),
-    );
-    searchService.dispose();
-    print(user);
-  }
+
+  final List pages = [
+    UserPage(),
+    RepositoryPage(),
+    TopicPage(),
+    CodePage()
+  ];
 
   @override
   Widget build(BuildContext context) {
+
+    final currenIndex = Provider.of<MenuModel>(context).itemSeleccionado;
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text('GitHub Search'),
-      ),
-      body: Center(
-        child: RaisedButton(
-          color: Theme.of(context).primaryColor,
-          child: Text('Search Users',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  .copyWith(color: Colors.white)),
-          onPressed: () => _showSearch(context),
-        ),
-      ),
+      body: Stack(
+        children: [
+          pages[currenIndex],
+          _PinteresMenuLocation()
+        ],
+      )
     );
   }
 }
+
+class _PinteresMenuLocation extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+
+    double sizeWidth = MediaQuery.of(context).size.width;
+
+    return Positioned(
+      bottom: 30,
+      child: Container(
+        width: sizeWidth,
+        child: Row(
+          children: [
+            Spacer(),
+            Menu(
+              backgroudColor: Theme.of(context).primaryColor,
+              activeColor: Colors.white,
+              items: [
+                Button(icon: Icons.person_rounded, text:'User', onPressed: () {}),
+                Button(icon: Icons.collections_bookmark, text: 'Repository', onPressed: (){}),
+                Button(icon: Icons.topic, text: 'topics', onPressed: (){}),
+                Button(icon: Icons.code, text: 'code', onPressed: (){}),
+              ],
+            ),
+            Spacer(),
+          ],
+        )
+      )
+    );
+  }
+}
+
+// void _showSearch(BuildContext context) async {
+
+//     final searchService = GitHubSearchService(apiWrapper: GitHubSearchAPIWrapper());
+//     final user = await showSearch<GitHubUser>(
+//       context: context,
+//       delegate: GitHubSearchDelegate(searchService),
+//     );
+//     searchService.dispose();
+//     print(user);
+
+//   }
