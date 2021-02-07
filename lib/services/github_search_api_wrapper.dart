@@ -1,9 +1,8 @@
 import 'dart:convert';
 
+import 'package:github_search_flutter_client_rxdart_example/core/domain/entities/models/github_search_result.dart';
+import 'package:github_search_flutter_client_rxdart_example/core/domain/entities/models/github_user.dart';
 import 'package:http/http.dart' as http;
-
-import '../models/github_search_result.dart';
-import '../models/github_user.dart';
 
 class GitHubSearchAPIWrapper {
   Uri searchUsernameUri(String username) => Uri(
@@ -11,7 +10,7 @@ class GitHubSearchAPIWrapper {
         host: 'api.github.com',
         path: 'search/users',
         queryParameters: {'q': username},
-      );
+  );
 
   Future<GitHubSearchResult> searchUser(String username) async {
     final uri = searchUsernameUri(username);

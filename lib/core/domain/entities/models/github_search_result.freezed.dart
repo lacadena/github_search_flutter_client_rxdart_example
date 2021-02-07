@@ -201,7 +201,7 @@ class _$ErrorCopyWithImpl<$Res> extends _$GitHubSearchResultCopyWithImpl<$Res>
   }
 }
 
-class _$Error implements Error {
+class _$Error implements Error { 
   const _$Error(this.error) : assert(error != null);
 
   @override
