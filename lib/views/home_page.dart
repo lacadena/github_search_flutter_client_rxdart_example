@@ -39,7 +39,7 @@ class _PinteresMenuLocation extends StatelessWidget {
     double sizeWidth = MediaQuery.of(context).size.width;
 
     return Positioned(
-      bottom: 20,
+      bottom: 30,
       child: Container(
         width: sizeWidth,
         child: Row(

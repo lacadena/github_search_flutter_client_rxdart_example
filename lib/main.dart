@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.indigo,
           primaryColor: Colors.indigo,
-          accentColor: Colors.grey.withOpacity(0.5),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: HomePage(),
