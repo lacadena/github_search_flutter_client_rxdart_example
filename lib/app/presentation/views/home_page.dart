@@ -4,11 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_search_flutter_client_rxdart_example/app/blocs/homePage_bloc.dart';
 import 'package:github_search_flutter_client_rxdart_example/app/presentation/custom/static_widgets.dart';
 import 'package:github_search_flutter_client_rxdart_example/core/domain/entities/dto/homeAction.dto.dart';
-import 'package:github_search_flutter_client_rxdart_example/core/domain/entities/models/github_user.dart';
 import 'package:github_search_flutter_client_rxdart_example/core/injectors/injector.dart';
-import 'package:github_search_flutter_client_rxdart_example/app/presentation/custom/github_search_delegate.dart';
-import 'package:github_search_flutter_client_rxdart_example/services/github_search_api_wrapper.dart';
-import 'package:github_search_flutter_client_rxdart_example/services/github_search_service.dart';
 
 import '../base_state.dart';
 

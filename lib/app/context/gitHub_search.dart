@@ -39,9 +39,14 @@ class GitHubSearch extends StatelessWidget {
         cupertinoOverrideTheme: CupertinoThemeData(
           brightness: Brightness.dark,
           primaryColor: Colors.black,
-          scaffoldBackgroundColor: Colors.white
+          scaffoldBackgroundColor: Color.fromRGBO(36,41,46,1)
         ),
         brightness: Brightness.dark,
+        scaffoldBackgroundColor: Color.fromRGBO(36,41,46,1),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Color.fromRGBO(36,41,46,1),
+          foregroundColor: Color.fromRGBO(36,41,46,1)
+        ),
         fontFamily: 'Open Sans',
       ),
     );
