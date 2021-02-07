@@ -1,6 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_search_flutter_client_rxdart_example/app/github_search_delegate_repository.dart';
+import 'package:github_search_flutter_client_rxdart_example/models/github_repository.dart';
+import 'package:github_search_flutter_client_rxdart_example/services/github_search_api_wrapper_repository.dart';
+import 'package:github_search_flutter_client_rxdart_example/services/github_search_service_repository.dart';
 
 import '../app/github_search_delegate.dart';
 import '../models/github_user.dart';
@@ -24,6 +28,17 @@ class _HomePageState extends State<HomePage> {
     );
     searchService.dispose();
     print(user);
+  }
+
+  void _showSearchRepositories(BuildContext context) async {
+    final searchService =
+        GitHubSearchServiceRepository(apiWrapperRepository: GitHubSearchAPIWrapperRepository());
+    final repository = await showSearch<GitHubRepository>(
+      context: context,
+      delegate: GitHubSearchDelegateRepository(searchService),
+    );
+    searchService.dispose();
+    print(repository);
   }
 
   @override
@@ -79,7 +94,10 @@ class _HomePageState extends State<HomePage> {
                         .copyWith(color: Colors.white)
                     ),
                     trailing: FaIcon(FontAwesomeIcons.sitemap, color: Colors.white),
-                    onTap: (){print('Repository');},
+                    onTap: (){
+                      _showSearchRepositories(context);
+                      setState(() => activar = false);
+                    },
                   ),
                   ListTile(
                     contentPadding: EdgeInsets.only(left: 200, right: 20),
