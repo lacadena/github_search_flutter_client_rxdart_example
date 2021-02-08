@@ -5,7 +5,7 @@ import 'package:github_search_flutter_client_rxdart_example/core/domain/entities
 import 'package:http/http.dart' as http;
 
 class ApiBaseSource {
-  final Duration timeout = Duration(seconds: 30);
+  final Duration timeout = Duration(milliseconds: 300);
   Uri uriApiSource(String queryParameter, String endpoint) => Uri(
         scheme: 'https',
         host: 'api.github.com',
