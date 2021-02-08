@@ -1,22 +1,16 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:github_search_flutter_client_rxdart_example/app/context/settings/app_settings.dart';
+import 'package:github_search_flutter_client_rxdart_example/app/context/settings/application.dart';
 
-import 'views/home_page.dart';
-
+import 'app/context/gitHub_search.dart';
 void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'GitHub Search Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: HomePage(),
-    );
-  }
+  Application().appSettings = AppSettings();
+   
+  runZoned<Future<void>>(()async {
+    WidgetsFlutterBinding.ensureInitialized();
+    runApp(GitHubSearch());
+  },
+  );
 }
