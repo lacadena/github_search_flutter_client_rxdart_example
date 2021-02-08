@@ -35,6 +35,8 @@ class GitHubSearchSourceImpl extends ApiBaseSource
             return a;
             }).toList();
           return GitHubSearchResult(users);
+        }else{
+          return GitHubSearchResult.gitHubError(GitHubAPIError.parseError);
         }
     });
   }

@@ -1,4 +1,3 @@
-
 enum Status {
   success,
   loading,
@@ -7,6 +6,7 @@ enum Status {
 class Result<T> {
   Status status;
   T data;
+  CustomError error;
   Map<String, String> errors;
   Result.loading(this.data) {
     status = Status.loading;
@@ -14,8 +14,13 @@ class Result<T> {
   Result.success(this.data) {
     status = Status.success;
   }
-  Result.error({String message, int code = 0}) {
+  Result.error({String message, int code = 0, CustomError error}) {
     status = Status.error;
+    this.error = error ??
+        CustomError(
+          message: message,
+          code: code,
+        );
     errors = {};
   }
   Result.errors(this.errors) {
@@ -23,3 +28,11 @@ class Result<T> {
   }
 }
 
+class CustomError {
+  final int code;
+  final String message;
+  const CustomError({
+    this.code = 0,
+    this.message,
+  });
+}

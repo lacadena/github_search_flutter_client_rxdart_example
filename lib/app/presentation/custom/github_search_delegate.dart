@@ -80,8 +80,14 @@ class GitHubSearchDelegate extends SearchDelegate<dynamic> {
           : searchBloc.resultsRepo,
       builder: (context, AsyncSnapshot<Result<GitHubSearchResult>> snapshot) {
         if (snapshot.hasData) {
-          final GitHubSearchResult result = snapshot.data.data;
+          if(snapshot.data.error != null){
+              return SearchPlaceholder(
+                message:snapshot.data.error.message, error: null, query: snapshot.data.error.message);
+          }else{
+             final GitHubSearchResult result = snapshot.data.data;
+          print(snapshot.data);
 
+          print(result);
           return result.when(
             (items) => ListView.builder(
               itemCount: items.length,
@@ -106,6 +112,8 @@ class GitHubSearchDelegate extends SearchDelegate<dynamic> {
             gitHubError: (error) => SearchPlaceholder(
                 message: errorMessages[error], error: error, query: query),
           );
+          }
+         
         } else {
           return Center(child: CircularProgressIndicator());
         }
@@ -327,7 +335,9 @@ class SearchPlaceholder extends StatelessWidget {
     final ThemeData theme = Theme.of(context)
         .copyWith(scaffoldBackgroundColor: Color.fromRGBO(36, 41, 46, 1));
     String text = message;
-    if (error.index == 1) text += " '" + query + "'";
+    if(error!= null){
+      if (error.index == 1) text += " '" + query + "'";
+    }
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.max,
