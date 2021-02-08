@@ -59,8 +59,9 @@ class _HomePageState extends BaseState<HomePage, HomePageBloc> {
 
   Widget buildActionCard(HomeActionDto action){
 
-    return GestureDetector(
+    return TextButton(
       child: Container(
+        width: double.maxFinite,
         decoration: BoxDecoration(
           color: Colors.white54,
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
@@ -86,7 +87,7 @@ class _HomePageState extends BaseState<HomePage, HomePageBloc> {
           ],
         ),
       ),
-      onTap: (){
+      onPressed: (){
         action.action(context);
       },
     );

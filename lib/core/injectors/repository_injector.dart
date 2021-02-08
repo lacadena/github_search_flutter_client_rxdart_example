@@ -1,5 +1,7 @@
 
+import 'package:github_search_flutter_client_rxdart_example/core/domain/repositories/github_search_repository.dart';
 import 'package:github_search_flutter_client_rxdart_example/core/domain/repositories/homeActions_repository.dart';
+import 'package:github_search_flutter_client_rxdart_example/core/domain/use_cases/github_search_usecase.dart';
 import 'package:github_search_flutter_client_rxdart_example/core/domain/use_cases/homeActions_usecase.dart';
 import 'package:github_search_flutter_client_rxdart_example/core/injectors/source_injector.dart';
 
@@ -18,6 +20,12 @@ class RepositoryInjector{
   HomeActionsRepository provideHomeActionsRepository(){
     return HomeActionsRepositoryImpl(
       DataSourceInjector().provideHomeActionsSource(),
+    );
+  }
+
+  GitHubSearchRepository provideGitHubSearchRepository(){
+    return GitHubSearchRepositoryImpl(
+      DataSourceInjector().provideGitHubSearchSource(),
     );
   }
 }
